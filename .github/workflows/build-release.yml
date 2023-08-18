@@ -8,7 +8,7 @@ on:
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
-  VERSION: 6.8
+  VERSION: 6.4.1
 
 jobs:
   build-push:
@@ -52,3 +52,4 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           cache-from: type=gha
           cache-to: type=gha,mode=min
+          build-args: "VERSION=${{ env.VERSION }}"
