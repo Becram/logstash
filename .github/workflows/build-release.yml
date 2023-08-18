@@ -30,7 +30,7 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           flavor: |
-            prefix=-${{ env.VERSION }}
+            prefix=${{ env.VERSION }}-
           tags: |
             type=raw,value=${{ env.RELEASE_VERSION }}
 
