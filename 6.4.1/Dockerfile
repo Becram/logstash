@@ -2,7 +2,7 @@ ARG VERSION
 
 FROM docker.elastic.co/logstash/logstash:${VERSION}
 
-ENV VERSION=${VERSION:-6.0.0}
+ENV VERSION=${VERSION}
 
 RUN bin/logstash-plugin install  --version ${VERSION} logstash-output-amazon_es
 # RUN cp /usr/share/logstash/vendor/bundle/jruby/2.5.0/gems/logstash-output-opensearch-1.2.0-java/lib/logstash/outputs/opensearch/templates/ecs-disabled/1x.json /usr/share/logstash/vendor/bundle/jruby/2.5.0/gems/logstash-output-opensearch-1.2.0-java/lib/logstash/outputs/opensearch/templates/ecs-disabled/6x.json
